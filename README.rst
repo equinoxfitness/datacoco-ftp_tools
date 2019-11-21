@@ -1,6 +1,16 @@
 datacoco-ftp_tools
 =======================
 
+.. image:: https://img.shields.io/pypi/v/datacoco-ftp_tools.svg
+   :target: https://pypi.python.org/pypi/datacoco-ftp_tools
+   :alt: Pypi Version
+.. image:: https://travis-ci.org/readthedocs/datacoco-ftp_tools.svg?branch=master
+   :target: https://travis-ci.org/readthedocs/datacoco-ftp_tools
+   :alt: Build Status
+.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
+  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
+  :alt: Documentation Status
+
 datacoco-ftp_tools provides basic interaction for FTP (File-Transfer-Protocol)
 Standard Internet protocol for transmitting files between computers on the Internet over TCP/IP connections
 This module has FTP and SFTP support
