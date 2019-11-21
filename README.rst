@@ -21,25 +21,45 @@ Quickstart
 
 
 ::
+
     from datacoco_ftp_tools import FTPInteraction
+
 
     # Sample Code for FTP Interaction
+
     ftp = FTPInteraction('ftp',ftp_site,ftp_user,ftp_password)
+
     ftp.conn()
+
     ftp.curr_dir() # outputs '/web_analytics'
+
     ftp.call_dir('Monitoring') # outputs '/web_analytics/Monitoring'
+
     ftp.write_file('test.txt', 'test')
+
     ftp.quit()
 
+
 ::
+
     from datacoco_ftp_tools import FTPInteraction
+
+
     # Sample Code for SFTP Interaction
+
     sftp = FTPInteraction('sftp',sftp_site,sftp_user,sftp_password)
+
     sftp.conn()
+
     sftp.curr_dir() outputs '/web_analytics'
+
     sftp.call_dir('Monitoring') outputs '/web_analytics/Monitoring'
+
     sftp.write_file('test.txt', 'test')
+
     sftp.quit()
+
+
 
 Contributing
 ~~~~~~~~~~~~
