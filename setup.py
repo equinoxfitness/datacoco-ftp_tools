@@ -13,6 +13,7 @@ setup(
     name="datacoco-ftp_tools",
     version=VERSION,
     author="Equinox Fitness",
+    author_email='paul.singman@equinox.com',
     description="FTP tool wrapper",
     long_description=open("README.rst").read(),
     long_description_content_type="text/markdown",
