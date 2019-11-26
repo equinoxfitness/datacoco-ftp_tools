@@ -29,7 +29,7 @@ datacoco-ftp_tools requires Python 3.6+
 Quickstart
 ----------
 
-
+SFTP and write file to remote server using FTP
 ::
 
     from datacoco_ftp_tools import FTPInteraction
@@ -50,6 +50,7 @@ Quickstart
     ftp.quit()
 
 
+SFTP and write file to remote server using SFTP
 ::
 
     from datacoco_ftp_tools import FTPInteraction
@@ -68,6 +69,28 @@ Quickstart
     sftp.write_file('test.txt', 'test')
 
     sftp.quit()
+
+
+SFTP and write file to remote server using SFTP
+::
+
+    from datacoco_ftp_tools import SFTPInteraction
+
+
+    # Sample Code for SFTP Interaction
+
+    sftp = SFTPInteraction(sftp_site, user, None, key_file='key.ppk')
+
+    sftp.conn()
+
+    sftp.call_dir('Monitoring') outputs '/web_analytics/Monitoring'
+
+    sftp.write_file(schema[table], remote_path=path)
+
+    sftp.quit()
+
+
+
 
 
 
