@@ -12,7 +12,7 @@ requires = ["pysftp==0.2.9"]
 
 def get_version():
     version_file = open(
-        os.path.join("datacoco_secretsmanager", "__version__.py")
+        os.path.join("datacoco_ftp_tools", "__version__.py")
     )
     version_contents = version_file.read()
     return re.search('__version__ = "(.*?)"', version_contents).group(1)
