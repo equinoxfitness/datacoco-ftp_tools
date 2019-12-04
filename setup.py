@@ -3,15 +3,24 @@
 """
 setuptools install script.
 """
+import os
+import re
 from setuptools import setup, find_packages
-
-from datacoco_ftp_tools import VERSION
 
 requires = ["pysftp==0.2.9"]
 
+
+def get_version():
+    version_file = open(
+        os.path.join("datacoco_secretsmanager", "__version__.py")
+    )
+    version_contents = version_file.read()
+    return re.search('__version__ = "(.*?)"', version_contents).group(1)
+
+
 setup(
     name="datacoco-ftp_tools",
-    version=VERSION,
+    version=get_version(),
     author="Equinox Fitness",
     author_email='paul.singman@equinox.com',
     description="FTP tool wrapper",
