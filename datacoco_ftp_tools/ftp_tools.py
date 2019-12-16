@@ -7,8 +7,8 @@ This module has FTP and SFTP support
 import pysftp
 from io import BytesIO, StringIO
 
-from ftplib import FTP_TLS
-from ftplib import FTP
+from ftplib import FTP_TLS # nosec
+from ftplib import FTP # nosec
 
 
 class FTPInteraction:
