@@ -1,2 +1,4 @@
-pysftp==0.2.9
+-r requirements.txt
 Sphinx==2.2.1
+black==19.10b0
+pre-commit==1.20.0
