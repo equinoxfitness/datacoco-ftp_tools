@@ -7,8 +7,8 @@ This module has FTP and SFTP support
 import pysftp
 from io import BytesIO, StringIO
 
-from ftplib import FTP_TLS # nosec
-from ftplib import FTP # nosec
+from ftplib import FTP_TLS  # nosec
+from ftplib import FTP  # nosec
 
 
 class FTPInteraction:
@@ -96,7 +96,8 @@ class FTPInteraction:
         """
         try:
             self.con.quit()
-        except BaseException:
+        except Exception as e:
+            print(e)
             self.con.close()
 
 
