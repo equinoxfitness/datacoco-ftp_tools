@@ -25,6 +25,7 @@ Run [tox](https://tox.readthedocs.io/en/latest/) to validate tests are working
 
 ```
 tox
+
 ```
 
 To run tox for multiple Python 3 versions, you can use [pyenv](https://github.com/pyenv/pyenv) to install and manage different Python versions locally.
@@ -32,7 +33,7 @@ To run tox for multiple Python 3 versions, you can use [pyenv](https://github.co
 If you see an error indicating a missing Python version, ie:
 `SKIPPED: InterpreterNotFound: python3.7`
 
-- See if you have the version specified: `pyenv versions`
-- If not, install it: `pyenv install 3.7.0`
-- Make available to your local directory: `pyenv local 3.7.0`
-- Run `tox` again
+-   See if you have the version specified: `pyenv versions`
+-   If not, install it: `pyenv install 3.7.0`
+-   Make available to your local directory: `pyenv local 3.7.0`
+-   Run `tox` again

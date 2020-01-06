@@ -1,13 +1,14 @@
 """
 Module provides basic interaction for FTP (File-Transfer-Protocol)
-Standard Internet protocol for transmitting files between computers on the Internet over TCP/IP connections
+Standard Internet protocol for transmitting files between
+computers on the Internet over TCP/IP connections
 This module has FTP and SFTP support
 """
 import pysftp
 from io import BytesIO, StringIO
 
-from ftplib import FTP_TLS
-from ftplib import FTP
+from ftplib import FTP_TLS  # nosec
+from ftplib import FTP  # nosec
 
 
 class FTPInteraction:
@@ -81,7 +82,8 @@ class FTPInteraction:
         """
         Writes file to the current directory.
         If this function won't work for you. You can call con from this class
-        and use it according to your preference. i.e read a file and store directly
+        and use it according to your preference. i.e read a file
+        and store directly
         ftp.con.storbinary(command, open(self.ftp_pgp_file, 'rb'))
         """
         command = "STOR " + filename
@@ -94,7 +96,8 @@ class FTPInteraction:
         """
         try:
             self.con.quit()
-        except:
+        except Exception as e:
+            print(e)
             self.con.close()
 
 

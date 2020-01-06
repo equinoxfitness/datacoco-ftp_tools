@@ -2,3 +2,4 @@
 Sphinx==2.2.1
 black==19.10b0
 pre-commit==1.20.0
+tox==3.14.0
