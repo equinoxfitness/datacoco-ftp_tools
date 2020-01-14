@@ -23,7 +23,7 @@ setup(
     version=get_version(),
     author="Equinox Fitness",
     author_email='paul.singman@equinox.com',
-    description="FTP tool wrapper",
+    description="Data common code for ftp tools by Equinox",
     long_description=open("README.rst").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/equinoxfitness/datacoco-ftp_tools",
