@@ -23,7 +23,7 @@ _Example:_
 
 1. Switch to virtual environment
 
-1. Run `python -m codb.mysql_tools`
+1. Run `python -m ftp_tools`
 
 - [ ] Verify that sample_table is populated with latest data
 
