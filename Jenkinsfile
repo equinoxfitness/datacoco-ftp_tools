@@ -8,7 +8,7 @@ pipeline{
         }
     }
     environment {
-        CODACY_PROJECT_TOKEN = credentials('codacy-coco.core')
+        CODACY_PROJECT_TOKEN = credentials('codacy-coco-ftp-tools')
     }
     triggers {
         pollSCM 'H/10 * * * *'
@@ -26,9 +26,9 @@ pipeline{
 
                 sh "pip install -r requirements.txt"
                 sh "pip install coverage codacy-coverage"
-                //sh "coverage run -m unittest tests/test_batch.py"
-//                 sh "coverage xml -i"
-//                 sh "python-codacy-coverage -r coverage.xml"
+                // sh "coverage run -m unittest tests/test_batch.py"
+                // sh "coverage xml -i"
+                // sh "python-codacy-coverage -r coverage.xml"
             }
             post {
                 always {
@@ -46,9 +46,13 @@ pipeline{
                 }
             }
         }
-        stage('Deploy to Pypi') {
+        stage('Deploy to Test Pypi Env') {
+            when {
+                anyOf {
+                    branch 'qa';
+                }
+            }
             steps {
-
                 withCredentials([[
                     $class: 'UsernamePasswordMultiBinding',
                     credentialsId: 'e9f73e25-ab88-4382-9018-dd0841cc327c',
@@ -59,7 +63,24 @@ pipeline{
                     sh "rm -rf dist"
                     sh "python setup.py sdist"
                     sh "twine upload --repository-url https://test.pypi.org/legacy/ --skip-existing dist/* -u ${USERNAME} -p ${PASSWORD}"
-                    //sh "twine upload --skip-existing dist/* -u ${USERNAME} -p ${PASSWORD}"
+                }
+            }
+        }
+        stage('Deploy to Pypi') {
+            when {
+                branch 'master'
+            }
+            steps {
+                withCredentials([[
+                    $class: 'UsernamePasswordMultiBinding',
+                    credentialsId: 'e9f73e25-ab88-4382-9018-dd0841cc327c',
+                    usernameVariable: 'USERNAME',
+                    passwordVariable: 'PASSWORD'
+                ]]) {
+                    sh "pip install twine"
+                    sh "rm -rf dist"
+                    sh "python setup.py sdist"
+                    sh "twine upload --skip-existing dist/* -u ${USERNAME} -p ${PASSWORD}"
                 }
             }
         }
