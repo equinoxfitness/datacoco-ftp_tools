@@ -1,5 +1,5 @@
 datacoco-ftp_tools
-=======================
+===================
 
 .. image:: https://badge.fury.io/py/datacoco-ftp-tools.svg
     :target: https://badge.fury.io/py/datacoco-ftp-tools
@@ -13,8 +13,12 @@ datacoco-ftp_tools
     :target: https://www.codacy.com/manual/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Grade
     :alt: Code Quality Grade
 
+.. image:: https://api.codacy.com/project/badge/Coverage/18451ba755734b5da30575516b87cb93
+    :target: https://www.codacy.com/manual/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Coverage
+    :alt: Coverage
+
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg
-    :target: https://github.com/equinoxfitness/datacoco-email_tools/blob/master/CODE_OF_CONDUCT.rst
+    :target: https://github.com/equinoxfitness/datacoco-ftp_tools/blob/master/CODE_OF_CONDUCT.rst
     :alt: Code of Conduct
 
 datacoco-ftp_tools provides basic interaction for FTP (File-Transfer-Protocol)
@@ -125,4 +129,4 @@ Contributions to datacoco\_ftp_tools are welcome!
 
 Please reference guidelines to help with setting up your development
 environment
-`here <https://github.com/equinoxfitness/datacoco-ftp_tools/blob/master/CONTRIBUTING.md>`__.
+`here <https://github.com/equinoxfitness/datacoco-ftp_tools/blob/master/CONTRIBUTING.rst>`__.
