@@ -165,7 +165,9 @@ disable=print-statement,
         redefined-outer-name,
         broad-except,
         useless-object-inheritance,
-        protected-access
+        protected-access,
+        unused-argument,
+        assignment-from-none
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
