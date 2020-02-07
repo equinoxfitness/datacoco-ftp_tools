@@ -1,4 +1,3 @@
-import pysftp
 import unittest
 from unittest import mock
 
@@ -32,7 +31,7 @@ class Connection:
 class TestFtp(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.config = dict(
+        cls.config = dict(  # nosec
             host="test.ftp.com", user="user", password="password"
         )
         cls.testClass = SFTPInteraction(**cls.config)
@@ -48,10 +47,8 @@ class TestFtp(unittest.TestCase):
             ) = self.config
             self.testClass.conn()
             resp = self.testClass.sftp_conn
-            method = self.testClass.sftp_conn._mock_new_parent._mock_name
-            obj = (
-                self.testClass.sftp_conn._mock_new_parent._mock_parent._mock_name
-            )
+            method = resp._mock_new_parent._mock_name
+            obj = resp._mock_new_parent._mock_parent._mock_name
 
             # Test connection object
             self.assertEqual("pysftp.Connection", f"{obj}.{method}")
@@ -64,16 +61,16 @@ class TestFtp(unittest.TestCase):
             "datacoco_ftp_tools.ftp_tools.pysftp"
         ) as MockPysftpConn:
             MockPysftpConn.Connection.return_value = Connection()
-            with mock.patch(
-                "datacoco_ftp_tools.ftp_tools.SFTPInteraction"
-            ) as MockSFTPInteraction:
+            with mock.patch("datacoco_ftp_tools.ftp_tools.SFTPInteraction"):
                 self.testClass.conn()
 
-                # Test call_dir() if current working direcotry is same as set path, it should do nothing or return none
+                # Test call_dir() if current working direcotry is same
+                # as set path, it should do nothing or return none
                 resp = self.testClass.call_dir("/path/to/file")
                 self.assertEqual(resp, None)
 
-                # Test call_dir() if it was able to point to new working directory
+                # Test call_dir() if it was able to point to
+                # new working directory
                 cwd = "/path/to/remote/folder"
                 self.testClass.call_dir(cwd)
                 self.assertEqual(self.testClass.sftp_conn.cwd_path, cwd)
@@ -83,9 +80,7 @@ class TestFtp(unittest.TestCase):
             "datacoco_ftp_tools.ftp_tools.pysftp"
         ) as MockPysftpConn:
             MockPysftpConn.Connection.return_value = Connection()
-            with mock.patch(
-                "datacoco_ftp_tools.ftp_tools.SFTPInteraction"
-            ) as MockSFTPInteraction:
+            with mock.patch("datacoco_ftp_tools.ftp_tools.SFTPInteraction"):
                 self.testClass.conn()
                 # Given
                 filename = "filename.txt"
@@ -109,9 +104,7 @@ class TestFtp(unittest.TestCase):
             "datacoco_ftp_tools.ftp_tools.pysftp"
         ) as MockPysftpConn:
             MockPysftpConn.Connection.return_value = Connection()
-            with mock.patch(
-                "datacoco_ftp_tools.ftp_tools.SFTPInteraction"
-            ) as MockSFTPInteraction:
+            with mock.patch("datacoco_ftp_tools.ftp_tools.SFTPInteraction"):
                 self.testClass.conn()
                 self.assertEqual(self.testClass.sftp_conn.close(), True)
 
@@ -120,9 +113,7 @@ class TestFtp(unittest.TestCase):
             "datacoco_ftp_tools.ftp_tools.pysftp"
         ) as MockPysftpConn:
             MockPysftpConn.Connection.return_value = Connection()
-            with mock.patch(
-                "datacoco_ftp_tools.ftp_tools.SFTPInteraction"
-            ) as MockSFTPInteraction:
+            with mock.patch("datacoco_ftp_tools.ftp_tools.SFTPInteraction"):
                 self.testClass.conn()
                 resp = self.testClass.get_file_data_as_string("filename.txt")
                 self.assertEqual(isinstance(resp, bytes), True)
