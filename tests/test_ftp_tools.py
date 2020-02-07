@@ -31,7 +31,7 @@ class Connection:
 class TestFtp(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.config = dict(
+        cls.config = dict(  # nosec
             host="test.ftp.com", user="user", password="password"
         )
         cls.testClass = SFTPInteraction(**cls.config)
