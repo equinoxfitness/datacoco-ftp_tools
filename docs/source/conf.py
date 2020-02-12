@@ -14,15 +14,17 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# Overrides Read the Doc's default
+master_doc = "index"
 
 # -- Project information -----------------------------------------------------
 
 project = "datacoco-ftp_tools"
-copyright = "2019, Equinox Fitness"
+copyright = "2020, Equinox Fitness"
 author = "Equinox Fitness"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.0"
+release = "0.1.3"
 
 
 # -- General configuration ---------------------------------------------------
@@ -38,7 +40,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -52,6 +54,3 @@ html_theme = "alabaster"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-
-# Overrides Read the Doc's default
-master_doc = "index"
