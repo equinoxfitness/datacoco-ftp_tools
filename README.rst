@@ -10,11 +10,11 @@ datacoco-ftp_tools
     :alt: Documentation Status
 
 .. image:: https://api.codacy.com/project/badge/Grade/18451ba755734b5da30575516b87cb93
-    :target: https://www.codacy.com/manual/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Grade
+    :target: https://www.codacy.com/gh/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Grade
     :alt: Code Quality Grade
 
 .. image:: https://api.codacy.com/project/badge/Coverage/18451ba755734b5da30575516b87cb93
-    :target: https://www.codacy.com/manual/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Coverage
+    :target: https://www.codacy.com/gh/equinoxfitness/datacoco-ftp_tools?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=equinoxfitness/datacoco-ftp_tools&amp;utm_campaign=Badge_Coverage
     :alt: Coverage
 
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg
